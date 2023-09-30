@@ -9,8 +9,8 @@ for line in sys.stdin:
         salary = tuple_list[-4]
         deptno = tuple_list[-1]
         if deptno != 'Finance' and salary >= 5000:
-            print("{0}, {1}".format(ename, salary))
+            print("{0}\t{1}".format(ename, salary))
     else:
         pass
         #dname = tuple_list[1]
-        #print("{0}, {1}".format("NULL", dname))#may not need, just in case
+        #print("{0}\t{1}".format("NULL", dname))#may not need, just in case
