@@ -8,12 +8,9 @@ for line in sys.stdin:
         ename = tuple_list[1] + ' ' + tuple_list[2]
         salary = tuple_list[-4]
         deptno = tuple_list[-1]
-        if deptno == '10':
-            value = ','.join(['emp', ename, salary])
-            print('{0}\t{1}'.format(deptno, value)) 
+        if deptno != 'Finance' and salary >= 5000:
+            print("{0}, {1}".format(ename, salary))
     else:
-        dname = tuple_list[1]
-        deptno = tuple_list[0]
-        if deptno == '10':
-            value = ','.join(['dept', dname])
-            print('{0}\t{1}'.format(deptno, value))
+        pass
+        #dname = tuple_list[1]
+        #print("{0}, {1}".format("NULL", dname))#may not need, just in case
