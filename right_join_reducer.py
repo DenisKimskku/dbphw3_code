@@ -26,6 +26,10 @@ for line in sys.stdin:
         if prev_deptno and dname and enames:
             for ename in enames:
                 print("{0}, {1}".format(ename, dname))
+            prev_deptno = None
+            enames = []
 if prev_deptno and dname and enames:
     for ename in enames:
         print("{0}, {1}".format(ename, dname))
+else:
+    print("NULL, {0}".format(dname))
