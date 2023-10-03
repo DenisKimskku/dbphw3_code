@@ -8,7 +8,7 @@ for line in sys.stdin:
         ename = tuple_list[1] + ' ' + tuple_list[2]
         salary = tuple_list[-4]
         deptno = tuple_list[-1]
-        if deptno != 'Finance' and salary >= 5000:
+        if deptno != 100 and salary >= 5000: # 100 indicates finance dept
             print("{0}\t{1}".format(ename, salary))
     else:
         pass
