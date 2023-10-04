@@ -18,7 +18,7 @@ for key_value in sys.stdin:
     else:
         if prev_deptno and dname and enames:
             for ename in enames:
-                print("%s, %s" % (ename, dname))
+                print("{0}, {1}".format(ename, dname))
             dname = None
             enames = []
         if table == 'emp':
@@ -29,4 +29,4 @@ for key_value in sys.stdin:
 
 if prev_deptno and dname and enames:
     for ename in enames:
-        print("%s, %s" % (ename, dname))
+        print("{0}, {1}".format(ename, dname))
