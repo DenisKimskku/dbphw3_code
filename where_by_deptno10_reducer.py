@@ -12,7 +12,8 @@ for line in sys.stdin:
     table = table_value.split(",", maxsplit=1)[0]
     if table == 'emp':
         ename, salary = table_value.split(",", maxsplit=2)[1:]
-        enames.append(ename)
+        if deptno == '10' and int(salary) >= 5000:
+            enames.append(ename)
     else:
         dname = table_value.split(",", maxsplit=1)[1]
         if enames:
