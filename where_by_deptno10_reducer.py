@@ -12,16 +12,24 @@ for line in sys.stdin:
     table = table_value.split(",", maxsplit=1)[0]
     if table == 'emp':
         ename, salary = table_value.split(",", maxsplit=2)[1:]
-        if deptno == '10' and int(salary) >= 5000:
+        if prev_deptno == deptno:
             enames.append(ename)
+        else:
+            if prev_deptno and dname and enames:
+                for ename in enames:
+                    print("{0}, {1}".format(ename, dname))
+            dname = None
+            enames = [ename]
+            prev_deptno = deptno
     else:
         dname = table_value.split(",", maxsplit=1)[1]
-        if enames:
+        if prev_deptno and dname and enames:
             for ename in enames:
                 print("{0}, {1}".format(ename, dname))
-        else:
-            print("{0}, {1}".format("NULL", dname))
-        enames = []
-if dname and enames:
+            prev_deptno = None
+            enames = []
+if prev_deptno and dname and enames:
     for ename in enames:
         print("{0}, {1}".format(ename, dname))
+else:
+    print("NULL, {0}".format(dname))
