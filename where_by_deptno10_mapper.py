@@ -12,7 +12,7 @@ for line in sys.stdin:
         deptno = tuple_list[-1]
         value = ','.join(['emp', ename, salary])
         if deptno == '100' or int(salary)<5000:
-            pass
+            continue
         else:
             if deptno in emp_dict:
                 emp_dict[deptno].append(value)
